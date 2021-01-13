@@ -6,7 +6,6 @@ object Hello {
     val alejandro: PersonSample = new PersonSample(lastname = "Brunal")
     val director: PersonSample = new PersonSample("Jose", "Martinez")
 
-
     exercise225.run()
 
     println(Unit2Dot4.methodName)
@@ -26,5 +25,19 @@ object Hello {
     // String, Boolean, Unit(void in other languages)
     println(exercise26.run)
     println(alejandro.getPersonName)
+
+    // Cat class
+    val oswald = new Cat("Oswald", "Black", "Milk")
+    val henderson = new Cat("Henderson", "Ginger", "Chips")
+    val quentin = new Cat("Quentin", "Tabby and white", "Curry")
+
+    println("---------------- Cats ------------------")
+    println(oswald.name)
+    println(henderson.name)
+    println(quentin.name)
+
+    println("--------------- Cat object ---------------")
+    println(chipShop.willServe(oswald))
+    println(chipShop.willServe(henderson))
   }
 }
