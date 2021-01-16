@@ -1,10 +1,12 @@
+import Classes.{Adder, Cat, Counter, Director, Film, PersonC}
+
 object Hello {
   def main(args: Array[String]): Unit = {
     val exercise225: Exercise225 = new Exercise225
     val exercise26: Unit2Dot6 = new Unit2Dot6
 
-    val alejandro: PersonSample = new PersonSample(lastname = "Brunal")
-    val director: PersonSample = new PersonSample("Jose", "Martinez")
+    val alejandro: PersonC = new PersonC(lastname = "Brunal")
+    val director: PersonC = new PersonC("Jose", "Martinez")
 
     exercise225.run()
 
@@ -24,7 +26,7 @@ object Hello {
 
     // String, Boolean, Unit(void in other languages)
     println(exercise26.run)
-    println(alejandro.getPersonName)
+    println(alejandro.name)
 
     // Cat class
     val oswald = new Cat("Oswald", "Black", "Milk")
@@ -44,21 +46,14 @@ object Hello {
     val eastwood          = new Director("Clint", "Eastwood", 1930)
     val mcTiernan         = new Director("John", "McTiernan", 1951)
     val nolan             = new Director("Christopher", "Nolan", 1970)
-    val someBody          = new Director("Just", "Some Body", 1990)
 
-    val memento           = new Film("Memento", 2000, 8.5, nolan)
-    val darkKnight        = new Film("Dark Knight", 2008, 9.0, nolan)
+
     val inception         = new Film("Inception", 2010, 8.8, nolan)
 
     val highPlainsDrifter = new Film("High Plains Drifter", 1973, 7.7, eastwood)
-    val outlawJoseyWales  = new Film("The Outlaw Josey Wales", 1976, 7.9, eastwood)
-    val unforgiven        = new Film("Unforgiven", 1992, 8.3, eastwood)
-    val granTorino        = new Film("Gran Torino", 2008, 8.2, eastwood)
     val invictus          = new Film("Invictus", 2009, 7.4, eastwood)
 
-    val predator          = new Film("Predator", 1987, 7.9, mcTiernan)
     val dieHard           = new Film("Die Hard", 1988, 8.3, mcTiernan)
-    val huntForRedOctober = new Film("The Hunt for Red October", 1990, 7.6, mcTiernan)
     val thomasCrownAffair = new Film("The Thomas Crown Affair", 1999, 6.8, mcTiernan)
 
     println(eastwood.yearOfBirth)
@@ -85,5 +80,21 @@ object Hello {
     println(new Counter(10).inc.dec.inc.inc.count)
     println(new Counter(10).inc.inc(10).count)
     println(new Counter(10).adjust(new Adder(11)).count)
+
+    println("----------------- Companion objects ---------------")
+    println(PersonC("Alejandro Garcia").lastname)
+    println(Director.older(eastwood, nolan).lastname)
+
+    println("----------------- Case classes ---------------")
+    println(Cat("Shallan", "three-color", "Turkey").toString)
+    println(Cat("Shallan", "three-color", "Turkey").name)
+
+    println("----------------- Pattern matching ---------------")
+    println(chipShop.willServe(henderson))
+    println(chipShop.willServe(oswald))
+
+    println(dad.rate(highPlainsDrifter))
+    println(dad.rate(dieHard))
+    println(dad.rate(inception))
   }
 }

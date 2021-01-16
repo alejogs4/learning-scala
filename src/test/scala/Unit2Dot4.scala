@@ -1,3 +1,5 @@
+import Classes.PersonC
+
 object Unit2Dot4 {
   val person = "Miguel"
 
@@ -51,5 +53,5 @@ object Person {
 }
 
 object Alien {
-  def greet(person: PersonSample) = "Greeting " + person.firstname
+  def greet(person: PersonC) = "Greeting " + person.firstname
 }
