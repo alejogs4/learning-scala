@@ -1,4 +1,5 @@
-import Classes.{Adder, Cat, Circle, Counter, Director, Draw, Film, PersonC, divide, Finite, Infinite}
+import Classes.{Adder, Cat, Circle, Counter, Director, Draw, Film, Finite, Infinite, PersonC, divide}
+import StructuralRecursion.RecursiveTypes.{End, ListSum, Pair}
 
 object Hello {
   def main(args: Array[String]): Unit = {
@@ -106,5 +107,12 @@ object Hello {
     }
 
     println(result)
+
+    println("----------------- Recursive data ---------------")
+    val exampleList = Pair(1, Pair(2, Pair(3, End)))
+    println(ListSum.sum(exampleList))
+    println(ListSum.sum(exampleList.tail))
+    println(exampleList.length)
+    println(exampleList.double)
   }
 }
