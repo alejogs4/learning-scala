@@ -1,4 +1,4 @@
-import Classes.{Adder, Cat, Counter, Director, Film, PersonC}
+import Classes.{Adder, Cat, Circle, Counter, Director, Draw, Film, PersonC, divide, Finite, Infinite}
 
 object Hello {
   def main(args: Array[String]): Unit = {
@@ -96,5 +96,15 @@ object Hello {
     println(dad.rate(highPlainsDrifter))
     println(dad.rate(dieHard))
     println(dad.rate(inception))
+
+    println("----------------- sealed traits ---------------")
+    println(Draw(Circle(10.0)))
+
+    val result = divide(1, 0) match {
+      case Finite(value) => s"It's ${value}"
+      case Infinite => "It's infite"
+    }
+
+    println(result)
   }
 }
